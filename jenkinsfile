@@ -5,18 +5,18 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[credentialsId: 'a7cb801b-6be1-4588-b6c4-52e72b62cf79', url: 'https://github.com/anastasiyakudzina/module_6.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '**']], extensions: [], userRemoteConfigs: [[credentialsId: 'a7cb801b-6be1-4588-b6c4-52e72b62cf79', url: 'https://github.com/anastasiyakudzina/module_6.git']]])
             }
         }
         stage('Build'){
             steps {
-                git branch: 'develop', credentialsId: 'a7cb801b-6be1-4588-b6c4-52e72b62cf79', url: 'https://github.com/anastasiyakudzina/module_6.git'
+                git branch: '', credentialsId: 'a7cb801b-6be1-4588-b6c4-52e72b62cf79', url: 'https://github.com/anastasiyakudzina/module_6.git'
                 sh 'python main.py'
             }
         }
         stage('Test'){
             steps {
-                git branch: 'develop', credentialsId: 'a7cb801b-6be1-4588-b6c4-52e72b62cf79', url: 'https://github.com/anastasiyakudzina/module_6.git'
+                git branch: '', credentialsId: 'a7cb801b-6be1-4588-b6c4-52e72b62cf79', url: 'https://github.com/anastasiyakudzina/module_6.git'
                 sh 'python test/main_test.py'
             }
         }
