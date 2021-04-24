@@ -10,13 +10,11 @@ pipeline {
         }
         stage('Build'){
             steps {
-
                 sh 'python main.py'
             }
         }
         stage('Test'){
             steps {
-
                 sh 'python test/main_test.py'
             }
         }
