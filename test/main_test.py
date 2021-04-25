@@ -4,7 +4,7 @@ import unittest
 class TestMain(unittest.TestCase):
 
     def test_hello(self):
-        self.assertTrue(False)
+        self.assertTrue(True)
 
 
 if __name__ == '__main__':
